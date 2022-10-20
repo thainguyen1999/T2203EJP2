@@ -53,13 +53,13 @@ public class Connector {
     public boolean execute(String sql, ArrayList parameters){
         try {
             PreparedStatement pstm = getPreparedStatement(sql);
-            for(int i=0;i < parameters.size();i++){
-                if(parameters.get(i) instanceof Integer){
-                    pstm.setInt(i+1,(Integer)parameters.get(i));
-                }else if(parameters.get(i) instanceof Double){
-                    pstm.setDouble(i+1,(Double) parameters.get(i));
-                }else{
-                    pstm.setString(i+1,(String)parameters.get(i));
+            for(int i=0;i < parameters.size();i++) {
+                if (parameters.get(i) instanceof Integer) {
+                    pstm.setInt(i + 1, (Integer) parameters.get(i));
+                } else if (parameters.get(i) instanceof Double) {
+                    pstm.setDouble(i + 1, (Double) parameters.get(i));
+                } else {
+                    pstm.setString(i + 1, (String) parameters.get(i));
                 }
             }
             pstm.execute();

@@ -6,7 +6,7 @@ public class Student {
     public Integer sdt;
 
 
-    public Student(){
+    public Student(String name, String email, Integer integer){
 
     }
 
@@ -17,8 +17,8 @@ public class Student {
         this.sdt = sdt;
     }
 
-    public Integer getId() {
-        return id;
+    public String getId() {
+        return String.valueOf(id);
     }
 
     public void setId(Integer id) {

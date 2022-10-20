@@ -1,6 +1,8 @@
 package informationManage.student;
 
 import informationManage.Main;
+import informationManage.dataAccessObject.StudentDAo;
+import informationManage.entities.Student;
 import informationManage.helper.Connector;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -14,27 +16,39 @@ public class StudentForm {
     public TextField txtFullName;
     public TextField txtEmail;
     public TextField txtPhone;
+    public Student editData;
+    public TextField id;
 
-    public void AddSt(ActionEvent actionEvent) {
+    public  void setEditData(Student editData){
+        this.editData = editData;
+        this.id.setText(editData.getId());
+        this.txtEmail.setText(editData.getEmail());
+        this.txtFullName.setText(editData.getFullName());
+        this.txtPhone.setText(String.valueOf(editData.getSdt()));
+    }
+
+    public void AddSt(ActionEvent actionEvent)  {
+        String code=this.id.getText();
+        String name=this.txtFullName.getText();
+        String email=this.txtEmail.getText();
+        String phoneNumber=this.txtPhone.getText();
         try {
-            String name =txtFullName.getText();
-            String email=txtEmail.getText();
-            Integer phoneNumber= Integer.parseInt(txtPhone.getText());
-            String sql="insert into students(name, email, sdt) values(?,?,?) ";
-            Connector con=Connector.getInstance();
-            ArrayList arrayList= new ArrayList();
-            arrayList.add(name);
-            arrayList.add(email);
-            arrayList.add(phoneNumber);
-            if (con.execute(sql,arrayList)){
-                backToList();
-            }else {
-                System.out.println("error");
+
+            if(code.isEmpty()|| name.isEmpty() ||email.isEmpty()|| phoneNumber.isEmpty()){
+                throw new Exception("please enter full product information");
             }
+            StudentDAo studentDAo=new StudentDAo();
+            if (this.editData==null){
+                Student st=new Student(Integer.valueOf(code),name,email,Integer.valueOf(phoneNumber));
+                studentDAo.insert(st);
+
+            }
+            this.backToList();
 
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
+
     }
 
     public void backToList() throws  Exception {
