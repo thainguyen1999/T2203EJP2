@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="exss1.Member.MemberList">
+   <children>
+      <TableView layoutX="24.0" layoutY="91.0" prefHeight="200.0" prefWidth="569.0">
+        <columns>
+          <TableColumn fx:id="idTv" prefWidth="66.0" text="Mã TV" />
+          <TableColumn fx:id="fullName" prefWidth="124.0" text="Họ tên" />
+            <TableColumn fx:id="sex" prefWidth="43.0" text="Giới tính" />
+            <TableColumn fx:id="dob" prefWidth="112.0" text="Ngày sinh" />
+            <TableColumn fx:id="add" prefWidth="102.0" text="Địa chỉ" />
+            <TableColumn fx:id="sEdit" prefWidth="54.0" text="Edit" />
+            <TableColumn fx:id="sDel" prefWidth="67.0" text="Delete" />
+        </columns>
+      </TableView>
+      <Button layoutX="24.0" layoutY="57.0" mnemonicParsing="false" onAction="#btnBack" text="&lt;&lt;BackHome" />
+      <Button layoutX="493.0" layoutY="57.0" mnemonicParsing="false" onAction="#btnAddMem" text="AddMember&gt;&gt;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="informationManage.library.Creat">
+   <children>
+      <TextField fx:id="txtName" layoutX="151.0" layoutY="62.0" prefHeight="25.0" prefWidth="221.0" promptText="name" />
+      <TextField fx:id="txtAuthor" layoutX="151.0" layoutY="106.0" prefHeight="25.0" prefWidth="221.0" promptText="author" />
+      <TextField fx:id="txtQty" layoutX="151.0" layoutY="157.0" prefHeight="25.0" prefWidth="221.0" promptText="Quantity" />
+      <Button layoutX="320.0" layoutY="207.0" mnemonicParsing="false" onAction="#submit" text="Submit" textFill="#e40202" />
+
+   </children>
+</AnchorPane>

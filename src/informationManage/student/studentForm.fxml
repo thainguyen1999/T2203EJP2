@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="informationManage.student.StudentForm">
+   <children>
+      <TextField fx:id="txtFullName" layoutX="123.0" layoutY="60.0" prefHeight="25.0" prefWidth="191.0" promptText="họ tên" />
+      <TextField fx:id="txtEmail" layoutX="123.0" layoutY="111.0" prefHeight="25.0" prefWidth="191.0" promptText="email" />
+      <TextField fx:id="txtPhone" layoutX="123.0" layoutY="159.0" prefHeight="25.0" prefWidth="191.0" promptText="số điện thoại" />
+      <Button layoutX="276.0" layoutY="200.0" mnemonicParsing="false" onAction="#AddSt" text="Add" textFill="#ed1111" />
+      <Button layoutX="123.0" layoutY="200.0" mnemonicParsing="false" onAction="#backToList" text="Back" />
+   </children>
+</AnchorPane>

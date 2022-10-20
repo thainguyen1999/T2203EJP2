@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.Pane?>
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0"
+      prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="exss1.BorrowBook.BorrowBook">
+    <TableView layoutX="17.0" layoutY="130.0" prefHeight="200.0" prefWidth="566.0">
+      <columns>
+          <TableColumn fx:id="idBook" prefWidth="75.0" text="Mã sách"/>
+          <TableColumn fx:id="idTv" prefWidth="75.0" text="Mã Sv"/>
+          <TableColumn fx:id="ngayMuon" prefWidth="105.0" text="Ngày mượn"/>
+          <TableColumn fx:id="ngayTra" prefWidth="101.0" text="Ngày trả"/>
+          <TableColumn fx:id="stt" prefWidth="105.0" text="Status"/>
+          <TableColumn fx:id="note" prefWidth="104.0" text="Note"/>
+      </columns>
+    </TableView>
+    <Button layoutX="17.0" layoutY="74.0" mnemonicParsing="false" onAction="#btnBack" text="&lt;&lt;BackHome"/>
+    <Button layoutX="477.0" layoutY="74.0" mnemonicParsing="false" onAction="#btnAddRent" text="AddRentBook&gt;&gt;"/>
+</Pane>
