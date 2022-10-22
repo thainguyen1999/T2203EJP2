@@ -21,4 +21,11 @@ public class HomeController {
         Main.rootStage.setTitle("quản lí sinh viên");
         Main.rootStage.setScene(new Scene(listStudent,800,600));
     }
+
+    public void goToRent(ActionEvent actionEvent) throws  Exception {
+        Parent listStudent=FXMLLoader.load(getClass().getResource("rentsbook/rents.fxml"));
+        Main.rootStage.setTitle("quản lí muon sach");
+        Main.rootStage.setScene(new Scene(listStudent,800,600));
+
+    }
 }

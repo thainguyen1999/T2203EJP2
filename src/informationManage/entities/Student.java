@@ -1,12 +1,23 @@
 package informationManage.entities;
 
+import informationManage.Main;
+import informationManage.dataAccessObject.StudentDAo;
+import informationManage.student.StudentForm;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+
+import java.io.IOException;
+
 public class Student {
     public  Integer id;
     public  String fullName,email;
     public Integer sdt;
+    public Button editSt, deleteSt;
 
 
-    public Student(String name, String email, Integer integer){
+    public Student(){
 
     }
 
@@ -15,7 +26,27 @@ public class Student {
         this.fullName = fullName;
         this.email = email;
         this.sdt = sdt;
-    }
+        this.editSt=new Button("Edit");
+        this.deleteSt=new Button("Delete");
+
+        this.editSt.setOnAction((event)-> {
+            try{
+                FXMLLoader loader =new FXMLLoader(getClass().getResource("../student/studentForm.fxml"));
+                    Parent root=loader.load();
+                    StudentForm studentForm=loader.getController();
+                    studentForm.setEditData(this);
+                    Main.rootStage.setScene(new Scene(root,800,600));
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+
+            }
+        });
+        this.deleteSt.setOnAction(event -> {
+            StudentDAo sd=new StudentDAo();
+            sd.delete(this);
+        });
+        }
+
 
     public String getId() {
         return String.valueOf(id);
@@ -47,5 +78,24 @@ public class Student {
 
     public void setSdt(Integer sdt) {
         this.sdt = sdt;
+    }
+    public Button getEditSt() {
+        return editSt;
+    }
+
+    public void setEditSt(Button editSt) {
+        this.editSt = editSt;
+    }
+    public Button getDeleteSt() {
+        return deleteSt;
+    }
+
+    public void setDeleteSt(Button deleteSt) {
+        this.deleteSt = deleteSt;
+    }
+
+    @Override
+    public String toString() {
+        return getFullName();
     }
 }

@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -23,10 +24,13 @@ public class StudentList implements Initializable {
     public TableColumn<Student,String> nameSt;
     public TableColumn<Student,String> emailSt;
     public TableColumn<Student,Integer> sdtSt;
+    public TableColumn<Student, Button> edit;
+    public TableColumn <Student, Button>del;
 
     public final static String connectionString = "jdbc:mysql://localhost:3306/t2203e";
     public final static String user = "root";
     public final static String pwd = "";
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -34,7 +38,8 @@ public class StudentList implements Initializable {
         nameSt.setCellValueFactory(new PropertyValueFactory<Student,String>("fullName"));
         emailSt.setCellValueFactory(new PropertyValueFactory<Student,String>("email"));
         sdtSt.setCellValueFactory(new PropertyValueFactory<Student,Integer>("sdt"));
-
+        edit.setCellValueFactory(new PropertyValueFactory<Student,Button>("editSt"));
+        del.setCellValueFactory(new PropertyValueFactory<Student,Button>("deleteSt"));
         ObservableList<Student> student= FXCollections.observableArrayList();
 
 

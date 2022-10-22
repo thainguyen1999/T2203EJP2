@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -28,12 +29,11 @@ public class BookList implements Initializable {
     public TableColumn<Book,String> tdName;
     public TableColumn<Book,String> tdAuthor;
     public TableColumn<Book,Integer> tdQty;
+    public TableColumn<Book, Button> edit;
+    public TableColumn<Book,Button> del;
     public TableView<Book> tbBook;
 
-    public final static String connectionString = "jdbc:mysql://localhost:3306/t2203e";
-    public final static String user = "root";
-    public final static String pwd = "";
-    private ActionEvent actionEvent;
+
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -41,6 +41,8 @@ public class BookList implements Initializable {
         tdName.setCellValueFactory(new PropertyValueFactory<Book,String>("name"));
         tdAuthor.setCellValueFactory(new PropertyValueFactory<Book,String>("author"));
         tdQty.setCellValueFactory(new PropertyValueFactory<Book,Integer>("qty"));
+        edit.setCellValueFactory(new PropertyValueFactory<Book,Button>("editSt"));
+        del.setCellValueFactory(new  PropertyValueFactory<Book,Button>("deleteSt"));
         ObservableList<Book> ls = FXCollections.observableArrayList();
 
         try {

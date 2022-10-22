@@ -6,14 +6,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="informationManage.student.StudentList">
+<AnchorPane prefHeight="400.0" prefWidth="723.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="informationManage.student.StudentList">
    <children>
-      <TableView fx:id="tbStudent" layoutX="54.0" layoutY="93.0" prefHeight="200.0" prefWidth="525.0">
+      <TableView fx:id="tbStudent" layoutX="4.0" layoutY="93.0" prefHeight="200.0" prefWidth="636.0">
         <columns>
           <TableColumn fx:id="idSt" prefWidth="39.0" text="id" />
-          <TableColumn fx:id="nameSt" prefWidth="158.0" text="Tên sinh viên" />
-            <TableColumn fx:id="emailSt" prefWidth="213.0" text="Email" />
-            <TableColumn fx:id="sdtSt" minWidth="9.0" prefWidth="114.0" text="SĐT" />
+          <TableColumn fx:id="nameSt" prefWidth="201.0" text="Tên sinh viên" />
+            <TableColumn fx:id="emailSt" prefWidth="168.0" text="Email" />
+            <TableColumn fx:id="sdtSt" minWidth="9.0" prefWidth="107.0" text="SĐT" />
+            <TableColumn fx:id="edit" minWidth="0.0" prefWidth="62.0" text="edit" />
+            <TableColumn fx:id="del" minWidth="9.0" prefWidth="58.0" text="del" />
         </columns>
       </TableView>
       <Button layoutX="54.0" layoutY="54.0" mnemonicParsing="false" onAction="#back" text="&lt;&lt;Back" />

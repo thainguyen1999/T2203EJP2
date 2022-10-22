@@ -25,6 +25,7 @@ public class StudentForm {
         this.txtEmail.setText(editData.getEmail());
         this.txtFullName.setText(editData.getFullName());
         this.txtPhone.setText(String.valueOf(editData.getSdt()));
+        this.id.setDisable(true);
     }
 
     public void AddSt(ActionEvent actionEvent)  {
@@ -37,11 +38,13 @@ public class StudentForm {
             if(code.isEmpty()|| name.isEmpty() ||email.isEmpty()|| phoneNumber.isEmpty()){
                 throw new Exception("please enter full product information");
             }
-            StudentDAo studentDAo=new StudentDAo();
+            StudentDAo stD=new StudentDAo();
             if (this.editData==null){
                 Student st=new Student(Integer.valueOf(code),name,email,Integer.valueOf(phoneNumber));
-                studentDAo.insert(st);
+                stD.insert(st);
 
+            }else {
+                stD.update(this.editData);
             }
             this.backToList();
 
@@ -56,4 +59,6 @@ public class StudentForm {
         Main.rootStage.setTitle("Books");
         Main.rootStage.setScene(new Scene(listStudent,800,600));
     }
+
+
 }

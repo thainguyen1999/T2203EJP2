@@ -1,6 +1,8 @@
 package informationManage.library;
 
 import informationManage.Main;
+import informationManage.entities.Book;
+import informationManage.entities.Student;
 import informationManage.helper.Connector;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -15,8 +17,14 @@ public class Creat {
     public TextField txtName;
     public TextField txtAuthor;
     public TextField txtQty;
+    public Book editData;
+    public  void setEditData(Book editData){
+        this.editData = editData;
 
-
+        this.txtName.setText(editData.getName());
+        this.txtAuthor.setText(editData.getAuthor());
+        this.txtQty.setText(String.valueOf(editData.getQty()));
+}
 
     public void submit(ActionEvent actionEvent) {
         try {
@@ -40,13 +48,9 @@ public class Creat {
 
     }
 
-    public void backToList() throws Exception {
+    private void backToList() throws Exception {
         Parent creat= FXMLLoader.load(getClass().getResource("booklist.fxml"));
         Main.rootStage.setTitle("thêm sách");
         Main.rootStage.setScene(new Scene(creat,800,600));
     }
-
-
-
-
 }
