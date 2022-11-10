@@ -43,7 +43,7 @@ public class Student implements Serializable {
         Phone = phone;
     }
 
-    public Student(String id, String name, String address, String phone) {
+    public Student(String id, String name, String address, int phone) {
         Id = id;
         Name = name;
         Address = address;

@@ -17,10 +17,9 @@ public class StudentManager {
     //thêm sv
     public void add() {
         String Id = inputId();
-        System.out.println("Student Id = " + Id);
         String Name = inputName();
         String Address = inputAddress();
-        String Phone = inputPhone();
+        int Phone = inputPhone();
         Student student = new Student(Id, Name, Address, Phone);
         studentList.add(student);
         studentDao.write(studentList);
@@ -29,17 +28,17 @@ public class StudentManager {
 
     public void show() {
         for (Student student : studentList) {
-            System.out.println(student.getId() + ", " + student.getName() + ", " + student.getAddress() + ", " + student.getPhone());
+            System.out.println(student.getId() + " " + student.getName() + " " + student.getAddress() + " " + student.getPhone());
         }
     }
 
     public String inputId() {
-        System.out.print("Nhập Id sinh viên: ");
+        System.out.print("Nhập Id: ");
         return scanner.nextLine();
     }
 
     private String inputName() {
-        System.out.print("Nhập tên sinh viên: ");
+        System.out.print("Nhập tên: ");
         return scanner.nextLine();
     }
 
@@ -48,9 +47,9 @@ public class StudentManager {
         return scanner.nextLine();
     }
 
-    private String inputPhone() {
+    private int inputPhone() {
         System.out.print("Nhập sđt: ");
-        return scanner.nextLine();
+        return scanner.nextInt();
     }
 
 
