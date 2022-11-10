@@ -1,7 +1,6 @@
 package informationManage.dataAccessObject;
 
 import informationManage.entities.Book;
-import informationManage.entities.Student;
 import informationManage.helper.Connector;
 
 import java.sql.PreparedStatement;
@@ -66,7 +65,18 @@ public class BookDAO implements  DAOInterface<Book>{
     }
 
     @Override
-    public int findOne(Book book) {
+    public int findOne(Integer id) {
+        String sql_txt="select * from students where id=?";
+        try{
+            Connector conn=Connector.getInstance();
+
+            PreparedStatement stt= conn.getPreparedStatement(sql_txt);
+            stt.setString(1,id.toString());
+            stt.execute(sql_txt);
+        }catch (Exception e){
+
+        }
+
         return 0;
     }
 

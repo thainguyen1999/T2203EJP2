@@ -1,2 +1,6 @@
-package informationManage.enums;public enum RepoType {
+package informationManage.enums;
+
+public enum RepoType {
+    BOOK,BOOKRENT
 }
+

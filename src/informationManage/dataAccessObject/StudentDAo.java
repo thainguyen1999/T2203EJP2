@@ -64,13 +64,13 @@ public class StudentDAo implements DAOInterface<Student> {
     }
 
     @Override
-    public int findOne(Student student) {
+    public int findOne(Integer id) {
         String sql_txt="select * from students where id=?";
         try{
             Connector conn=Connector.getInstance();
 
             PreparedStatement stt= conn.getPreparedStatement(sql_txt);
-            stt.setString(1,student.getId());
+            stt.setString(1,id.toString());
             stt.execute(sql_txt);
         }catch (Exception e){
 

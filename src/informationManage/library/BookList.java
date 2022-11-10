@@ -1,8 +1,11 @@
 package informationManage.library;
 
 import informationManage.Main;
+import informationManage.dataAccessObject.BookDAO;
 import informationManage.entities.Book;
 import informationManage.entities.Student;
+import informationManage.enums.RepoType;
+import informationManage.factory.RepositoryFactory;
 import informationManage.helper.Connector;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -45,6 +48,11 @@ public class BookList implements Initializable {
         del.setCellValueFactory(new  PropertyValueFactory<Book,Button>("deleteSt"));
         ObservableList<Book> ls = FXCollections.observableArrayList();
 
+        //lấy data từ  database
+        BookDAO bd=(BookDAO) RepositoryFactory.createRepository(RepoType.BOOK);
+        ls.addAll(bd.selectAll());
+        tbBook.setItems(ls);
+
         try {
 
             String sql_txt="select* from books";
@@ -62,7 +70,7 @@ public class BookList implements Initializable {
         }catch (Exception e){
 
         }finally {
-          tbBook.setItems(ls);
+            tbBook.setItems(ls);
         }
 
     }
