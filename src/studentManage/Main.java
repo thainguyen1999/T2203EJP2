@@ -21,7 +21,7 @@ public class Main {
                 case "2":
                     studentManager.show();
                     break;
-                case "4":
+                case "0":
                     System.out.println("exited!");
                     exit = true;
                     break;
@@ -43,7 +43,7 @@ public class Main {
         System.out.println("-----------menu------------");
         System.out.println("1. Add student records.");
         System.out.println("2. Display student records.");
-        System.out.println("4. exit.");
+        System.out.println("0. exit.");
         System.out.println("---------------------------");
         System.out.print("Please choose: ");
     }

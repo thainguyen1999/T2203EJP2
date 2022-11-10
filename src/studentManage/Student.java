@@ -6,9 +6,16 @@ public class Student implements Serializable {
     public String Id;
     public String Name;
     public String Address;
-    public String Phone;
+    public int Phone;
 
     public Student(){
+    }
+
+    public Student(String id, String name, String address, int phone) {
+        Id = id;
+        Name = name;
+        Address = address;
+        Phone = phone;
     }
 
     public String getId() {
@@ -35,19 +42,14 @@ public class Student implements Serializable {
         Address = address;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return Phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         Phone = phone;
     }
 
-    public Student(String id, String name, String address, int phone) {
-        Id = id;
-        Name = name;
-        Address = address;
-        Phone = phone;
-    }
+
 
 }
